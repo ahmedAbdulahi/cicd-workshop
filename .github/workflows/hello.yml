@@ -1,0 +1,16 @@
+name: hello
+on: 
+    push:
+        branches: [main]
+    workflow_dispatch:
+
+jobs:
+    hello:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Si hei
+              run: echo "hei, ${{github.actor }}!"
+        
+            - name: kjor LS
+              run: ls
+        
