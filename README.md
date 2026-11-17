@@ -121,7 +121,7 @@ Fasiten svarer på dette.
    bruke `actions/deploy-pages`.
 5. Gi deploy-jobben rettighetene den trenger med `permissions:`: `pages: write`
    for å publisere, og `id-token: write` for å be om et identitetstoken. Gi så
-   få rettigheter som mulig, og bare til jobben som trenger dem — ikke til hele
+   få rettigheter som mulig, og bare til jobben som trenger dem. Ikke til hele
    workflowen.
 6. Push til `main`, og sjekk at siden virker.
 
@@ -132,7 +132,13 @@ Fasiten svarer på dette.
   satte i GitHub, ikke fallbacken fra koden.
 - På andre brancher og på pull requests hoppes deploy-jobben over.
 
-**Les mer** · [Pages med Actions](https://docs.github.com/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow) · [Variabler](https://docs.github.com/actions/how-tos/write-workflows/choose-what-workflows-do/use-variables) · [Permissions-syntaks](https://docs.github.com/actions/reference/workflow-syntax-for-github-actions#permissions)
+**Tenk over**
+
+- Hva er `GITHUB_TOKEN`? Hvem lager det, og hvor lenge lever det?
+- Du la aldri inn noen secret for å deploye. Hvordan vet Pages at det er din
+  workflow som spør?
+
+**Les mer** · [Pages med Actions](https://docs.github.com/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow) · [Variabler](https://docs.github.com/actions/how-tos/write-workflows/choose-what-workflows-do/use-variables) · [Permissions-syntaks](https://docs.github.com/actions/reference/workflow-syntax-for-github-actions#permissions) · [GITHUB_TOKEN](https://docs.github.com/actions/security-for-github-actions/security-guides/automatic-token-authentication) · [OIDC](https://docs.github.com/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect)
 
 **Fasit** · [`solutions/steg-3/`](solutions/steg-3/)
 
