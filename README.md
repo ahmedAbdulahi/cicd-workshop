@@ -55,7 +55,7 @@ grønne. Det er de tre kommandoene pipelinen din skal kjøre.
   kjøring fra Actions-fanen.
 - Lag én jobb som kjører på en Ubuntu-runner.
 - Legg inn to steg: ett som skriver ut hvem som startet kjøringen, og ett som
-  kjører en kommando med `run`.
+  kjører en vilkårlig kommando.
 - Push, og finn kjøringen i Actions-fanen.
 
 **Forventet resultat**
@@ -148,8 +148,7 @@ Fasiten svarer på dette.
 - Jobben skal bare kjøre når hendelsen er en pull request, og den skal vente på
   at byggejobben er ferdig.
 - `gh` trenger et token for å snakke med GitHub. Bruk `GITHUB_TOKEN`, som ligger
-  klart i `secrets`. Tokenet må ha lov til å skrive på pull requests, så gi
-  jobben rettigheten `pull-requests: write` med `permissions:`.
+  klart i `secrets`.
 - Lag en branch, endre noe, og åpne en pull request mot `main` **i din egen fork**.
 
 > [!WARNING]
